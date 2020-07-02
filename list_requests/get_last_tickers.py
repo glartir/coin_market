@@ -88,14 +88,21 @@ class GetLastTickers(BaseRequest):
             r.join()
         responses["time_finish"]=time.time()
 
-
+        time_response=[]
         for i in range(number):
+            time_response.append(responses[i].elapsed.total_seconds())
+
             self.check_time(responses[i])
             self.check_size(responses[i])
             self.check_date(responses[i])
+        time_response.sort()
+
         total_time= responses["time_finish"]-responses["time_start"]
         rps=number/total_time
-        assert  rps>5 , "The number of response per second is less than 5 "
+        x_20_lat = number // 5  # Расчитываем 20% от количичества и отбрасываем их
+
+        assert time_response[-x_20_lat] < 0.450 ,"80% latency >450ms"
+        assert  rps > 5 , "The number of response per second is less than 5 "
         print(f"total time = {total_time}")
 
 

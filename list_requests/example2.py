@@ -1,6 +1,7 @@
 
-resp ={"1" : 5, "2" : 4}
-resp["1"]=8
-i=5
-resp[i] = 9
-print (resp)
+times=[9,5,6,7,1,3]
+times.sort()
+#print (max(times))
+print(times[-2])
+x=8//5
+print(times[-x])
