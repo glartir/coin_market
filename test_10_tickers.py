@@ -8,7 +8,7 @@ def test_10_tickers_first_task():
     last_10_tickers.first_task()
 
 
-# def test_10_tickers_second_task():
-#     last_10_tickers = GetLastTickers()
-#     # Количество параллельных запросов
-#     last_10_tickers.multistart(8)
+def test_10_tickers_second_task():
+    last_10_tickers = GetLastTickers()
+    # Количество параллельных запросов
+    last_10_tickers.multistart(8)
