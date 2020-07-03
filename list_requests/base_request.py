@@ -1,9 +1,11 @@
 import requests
 
+API_KEY = "fd4e7cd3-7e6a-4a5d-8dbc-1251ad07a38e"
 
 class BaseRequest():
     def __init__(self):
-        API_KEY = "fd4e7cd3-7e6a-4a5d-8dbc-1251ad07a38e"
+
+
         self.host="https://pro-api.coinmarketcap.com/v1/"
         self.headers = {
                         'Accepts': 'application/json',
