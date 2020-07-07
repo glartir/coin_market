@@ -40,7 +40,7 @@ class GetLastTickers(BaseRequest):
     def check_time(self, response):
         print(response.elapsed.total_seconds())
         assert response.status_code == 200, f"Status code is NOT 200, response status = {response.status_code} "
-        assert response.elapsed.total_seconds() < 0.5, f"Response time exceeds 500 ms, response time = {response.elapsed.total_seconds()}"
+        assert response.elapsed.total_seconds() < 0.5, f"Response time exceeds 500 ms, response time = {response.elapsed.total_seconds()*1000} ms"
 
     def first_task(self):
         response = self.get_10_last_tickers()
