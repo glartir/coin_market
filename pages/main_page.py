@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import MainPageLocators
+from selenium.common.exceptions import TimeoutException
 #from langdetect.detector_factory import detect
 import cld2
 from selenium.webdriver.support import expected_conditions as EC
@@ -48,19 +49,31 @@ class MainPage(BasePage):
         assert detect_lang == lang_interface, f"The title was not changed, detected {detect_lang}, used {lang_interface}"
 
     def should_be_change_currency(self,lang_interface="fil"):
-        # current_currency = WebDriverWait(self.browser, 5).until(
-        #     EC.element_to_be_clickable(MainPageLocators.CURRENCY_BUTTON))
-        # current_currency.click()#
-        kek = WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(MainPageLocators.CURRENCY_BUTTON)).text
-        print(kek)
-        print("ne upal")   # Периодически падает так как грузит не актуальные данные
-        # current_currency = WebDriverWait(self.browser, 5).until(
-        #     EC.element_to_be_clickable(MainPageLocators.CURRENCY_VALUE)).text
-        current_currency = WebDriverWait(self.browser, 5).until(
-             EC.element_to_be_clickable(MainPageLocators.CURRENCY_BUTTON)).text
 
-        currency =  MainPageLocators.LANGUAGE_BUTTONS_DICT[lang_interface][2]
-        assert currency == current_currency , f"Currency name is not primary for this language currency = {currency}, current= {current_currency}"
+        currency = MainPageLocators.LANGUAGE_BUTTONS_DICT[lang_interface][2]
+        # current_currency = WebDriverWait(self.browser, 5).until(
+        #     EC.element_to_be_clickable(MainPageLocators.CURRENCY_BUTTON)).text
+        try:
+            WebDriverWait(self.browser, 5).until(
+                EC.text_to_be_present_in_element(MainPageLocators.CURRENCY_BUTTON, f"{currency}"))
+
+
+        except TimeoutException:
+            #print ("ded")
+            current_currency = WebDriverWait(self.browser, 5).until(
+                EC.element_to_be_clickable(MainPageLocators.CURRENCY_BUTTON)).text
+
+            assert currency == current_currency, f"Currency name is not primary for this language currency = {currency}, current= {current_currency}"
+
+
+        #assert currency == current_currency, f"Currency name is not primary for this language currency = {currency}, current= {current_currency}"
+
+        #print("kek")
+
+        # print(current_currency)
+        print("ne upal")
+
+
 
 
 
