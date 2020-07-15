@@ -14,19 +14,21 @@ class MainPageLocators():
     #     {
     #         "de" : (By.CSS_SELECTOR, '.frscwy-3:nth-child(1)'),
     # } На случай если нужна будет такая запись
-    COLUMNS_DICT = {0 : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(1)'),
-                   1  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(2)'),
-                   2  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(3)'),
-                   3  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(4)'),
-                   4  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(5)'),
-                   5  : (By.CSS_SELECTOR,'.cmc-table__table-wrapper-outer:nth-child(3) >div >table >thead >tr > .cmc-table__header:nth-child(1)'),
-                   6  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(2)'),
-                   7  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(3)'),
-                   8  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(4)'),
-                   9  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(5)'),
-                   10 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(6)'),
-                   11 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(7)'),
-                   12 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(8)')
+    HEADER_DICT= {1 : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(1)'),
+                   2  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(2)'),
+                   3  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(3)'),
+                   4  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(4)'),
+                   5  : (By.CSS_SELECTOR, '.NavbarItem__NavbarItemEl-sc-1a0iugo-1:nth-child(5)')}
+
+    COLUMNS_DICT = {
+                   1  : (By.CSS_SELECTOR,'.cmc-table__table-wrapper-outer:nth-child(3) >div >table >thead >tr > .cmc-table__header:nth-child(1)'),
+                   2  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(2)'),
+                   3  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(3)'),
+                   4  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(4)'),
+                   5  : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(5)'),
+                   6 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(6)'),
+                   7 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(7)'),
+                   8 : (By.CSS_SELECTOR, '.cmc-table__table-wrapper-outer:nth-child(3) > div >table > thead >tr >.cmc-table__header:nth-child(8)')
 
 
                      }
@@ -47,21 +49,3 @@ class MainPageLocators():
                               "zh-tw": [(By.CSS_SELECTOR, '[href="/zh-tw/"]'), "zh-Hant", "TWD"] #繁體中文
 
                               }
-    # LANGUAGE_TO_TRANSLATE_AND_CURRENCY = { "de" : ["de","EUR"],
-    #                                        "en": ["en", "USD"],
-    #                                        "es": ["es", "USD"],
-    #                                        "fil": ["tl", "PHP"],
-    #                                        "fr": ["fr", "EUR"],
-    #                                        "hi": ["hi", "USD"],
-    #                                        "it": ["it", "EUR"],
-    #                                        "ja": ["ja", "JPY"],
-    #                                        "ko": ["ko", "USD"],
-    #                                        "pt-br": ["pt", "BRL"],
-    #                                        "ru": ["ru", "RUB"],
-    #                                        "tr": ["tr", "TRY"],
-    #                                        "vi": ["vi", "USD"],
-    #                                        "zh": ["zh", "CNY"],
-    #                                        "zh-": ["zh-Hant", "TWD"],
-    #
-    #                                        }
-
